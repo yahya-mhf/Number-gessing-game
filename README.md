@@ -4,8 +4,9 @@
 
 Welcome to the **Number Guessing Game**! This is a fun, interactive game where you try to guess a randomly generated number within a specific range. The game provides feedback on whether your guess is too high or too low, and the number of attempts varies based on the difficulty level chosen.
 
-Credits
+### Credits
 This project is based on the Number Guessing Game idea from roadmap.sh.
+https://roadmap.sh/projects/number-guessing-game
 
 ## Table of Contents
 
