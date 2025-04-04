@@ -1,6 +1,6 @@
 # Number Guessing Game
 
-⚠️ **Warning**: This is just a simple game created to help you practice coding. **Don't waste your time** if you're looking for a serious game—it's just for learning purposes!
+⚠️ **Warning**: This is just a simple game created to help you practice coding. **Don't waste your time** —it's just for learning purposes!
 
 Welcome to the **Number Guessing Game**! This is a fun, interactive game where you try to guess a randomly generated number within a specific range. The game provides feedback on whether your guess is too high or too low, and the number of attempts varies based on the difficulty level chosen.
 
