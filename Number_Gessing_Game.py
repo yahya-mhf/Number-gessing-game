@@ -1,3 +1,5 @@
+import os
+
 def rand(low = 1, hight = 100):
     from datetime import datetime
 
@@ -7,11 +9,8 @@ def rand(low = 1, hight = 100):
 
     return low + time_int % (hight - low + 1)
 
-def main():
-    while True:
-        r = rand()
-        try:
-            d = int(input("""
+def homescrean(ind = False):
+    print("""
 ───────────────────────────────────
  🎮  Choose Your Difficulty Level  🎮
 ───────────────────────────────────
@@ -25,13 +24,31 @@ def main():
  ⚠️  Warning: This game is just for coding practice!, Don't waste your Your time on it
  ⚠️  Don't waste your Your precious time ⚠️
 ───────────────────────────────────
-Enter your choice: """))
+""")
+    if ind:
+        print("Please enter a valid choice ⚠️\n")
 
-        except ValueError:
-            print("\nPlease enter a valid choice")
-            continue
-        except KeyboardInterrupt:
-            print("\nExiting program. Goodbye!")
+def main():
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear') #Clear the terminal
+        r = rand()
+
+        d = 1
+        ind = False
+        c_stop = False
+        while True:
+            os.system('cls' if os.name == 'nt' else 'clear') #Clear the terminal
+            homescrean(ind)
+            try:
+                d = int(input("Enter your choice: "))
+            except ValueError:
+                ind = True
+                continue
+            except KeyboardInterrupt:
+                print("\nExiting program. Goodbye!")
+                c_stop = True
+            break
+        if c_stop:
             exit()
 
         n = 5 if d == 2 else (3 if d == 3 else 10)
@@ -54,13 +71,18 @@ Enter your choice: """))
                 print(f"    Incorrect! The number is greater than {gess}")
                 i += 1
             else:
-                print(f"    Congratulations! You guessed the correct number in {i + 1} attempts.")
                 win = True
+                print(f"    ✅✅ Congratulations! You guessed the correct number in {i + 1} attempts. ✅✅")
                 break
-        if win:
+        if not win:
+            print(f"\n  ❌❌  You Failed !? the correct number is {r} ❌❌")
+
+        play_again = input("\nPlay again ❓ (y/n) ").lower()
+        if play_again in ['y', 'yes']:
             continue
-        else:
-            print(f"   You Failed !? the correct number is {r}")
+        break
+
+
 
 
 if __name__=="__main__":
